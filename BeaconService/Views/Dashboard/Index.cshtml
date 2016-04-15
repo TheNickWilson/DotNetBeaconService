@@ -1,6 +1,8 @@
-﻿@model List<BeaconService.Models.SightingDocument>
+﻿@model BeaconService.Models.Dashboard
 
 <h1>STILLAGE GATE PROXIMITY ALERTS</h1>
+
+@Model.ErrorMessage
 
 <table class="table">
 	<thead>
@@ -14,7 +16,7 @@
 	</tr>
 	</thead>
 	<tbody>
-	@foreach (var sighting in Model)
+	@foreach (var sighting in Model.Sightings)
 	{
 		<tr>
 			<td>@sighting.LocalTimestamp.ToString("dd MMM yyyy HH:mm")</td>

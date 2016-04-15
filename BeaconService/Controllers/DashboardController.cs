@@ -21,19 +21,15 @@ namespace BeaconService.Controllers
 			try
 			{
 				var collection = _database.GetCollection<SightingDocument>("Sightings");
-				var items = collection.Find(x => true).ToList();
-				return View(items);
+				var model = new Dashboard {Sightings = collection.Find(x => true).ToList()};
+				
+				return View(model);
 			}
 			catch (Exception ex)
 			{
-
-				return RedirectToAction("CustomError", ex.Message);
+				var errorModel = new Dashboard {ErrorMessage = ex.Message};
+				return View(errorModel);
 			}
         }
-
-	    public ActionResult CustomError(string errorMessage)
-	    {
-		    return View(errorMessage);
-	    }
     }
 }
