@@ -8,7 +8,7 @@ namespace BeaconService.Helpers
 		public static IMongoDatabase GetDatabase()
 		{
 			var client = new MongoClient(GetConnectionString());
-			return client.GetDatabase("Beacons");
+			return client.GetDatabase("beacon_service");
 		}
 
 		public static string GetConnectionString()
