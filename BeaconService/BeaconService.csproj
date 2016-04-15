@@ -177,6 +177,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\MongoHelper.cs" />
+    <Compile Include="Models\Dashboard.cs" />
     <Compile Include="Models\Sighting.cs" />
     <Compile Include="Models\SightingDocument.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -230,7 +231,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Dashboard\CustomError.cshtml" />
     <None Include="Views\Dashboard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
