@@ -1,0 +1,29 @@
+﻿@model List<BeaconService.Models.SightingDocument>
+
+<h1>STILLAGE GATE PROXIMITY ALERTS</h1>
+
+<table class="table">
+	<thead>
+	<tr>
+		<th>TIMESTAMP</th>
+		<th>LOCATION</th>
+		<th>BEACON ID</th>
+		<th>STILLAGE CONTENTS</th>
+		<th>LOCATION STATUS</th>
+		<th>ALERT STATUS</th>
+	</tr>
+	</thead>
+	<tbody>
+	@foreach (var sighting in Model)
+	{
+		<tr>
+			<td>@sighting.LocalTimestamp.ToString("dd MMM yyyy HH:mm")</td>
+			<td>DOOR 34 FACTORY A</td>
+			<td>STILLAGE123ED45</td>
+			<td>MIRRORS</td>
+			<td>DETAINED</td>
+			<td>UNRESOLVED</td>
+		</tr>
+	}
+	</tbody>
+</table>
