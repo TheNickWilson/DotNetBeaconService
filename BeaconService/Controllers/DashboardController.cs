@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using BeaconService.Helpers;
 using BeaconService.Models;
 using MongoDB.Driver;
@@ -17,9 +18,22 @@ namespace BeaconService.Controllers
 		// GET: Dashboard
 		public ActionResult Index()
         {
-			var collection = _database.GetCollection<SightingDocument>("Sightings");
-			var items = collection.Find(x => true).ToList();
-			return View(items);
+			try
+			{
+				var collection = _database.GetCollection<SightingDocument>("Sightings");
+				var items = collection.Find(x => true).ToList();
+				return View(items);
+			}
+			catch (Exception ex)
+			{
+
+				return RedirectToAction("CustomError", ex.Message);
+			}
         }
+
+	    public ActionResult CustomError(string errorMessage)
+	    {
+		    return View(errorMessage);
+	    }
     }
 }
